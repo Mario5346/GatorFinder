@@ -1,3 +1,6 @@
 # SWE_2025
 
-Mario Ponte, Deep Adhikari, Ansh Kalariya, Saiesh Prabhu
+Front End: Deep Adhikari, Ansh Kalariya
+Back End: Mario Ponte, Saiesh Prabhu
+
+# Project Description
