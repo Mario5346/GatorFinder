@@ -1,0 +1,1 @@
+Details for implementation of CICD
