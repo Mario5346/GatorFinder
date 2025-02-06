@@ -1,0 +1,80 @@
+definitions:
+  models.Event:
+    properties:
+      date:
+        type: string
+      id:
+        type: string
+      title:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /events/add:
+    post:
+      consumes:
+      - application/json
+      description: Adds a new event to the system
+      parameters:
+      - description: Event Data
+        in: body
+        name: event
+        required: true
+        schema:
+          $ref: '#/definitions/models.Event'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Event'
+      summary: Add a new event
+      tags:
+      - Events
+  /events/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Adds a new event to the system
+      parameters:
+      - description: Event Data
+        in: body
+        name: event
+        required: true
+        schema:
+          $ref: '#/definitions/models.Event'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Event'
+      summary: Delete an event
+      tags:
+      - Events
+  /events/get:
+    get:
+      consumes:
+      - application/json
+      description: Adds a new event to the system
+      parameters:
+      - description: Event Data
+        in: body
+        name: event
+        required: true
+        schema:
+          $ref: '#/definitions/models.Event'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Event'
+      summary: Get event details
+      tags:
+      - Events
+swagger: "2.0"
