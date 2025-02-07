@@ -41,21 +41,20 @@ paths:
     delete:
       consumes:
       - application/json
-      description: Adds a new event to the system
+      description: Deletes an event from the system by ID
       parameters:
-      - description: Event Data
-        in: body
-        name: event
+      - description: Event ID
+        in: query
+        name: id
         required: true
-        schema:
-          $ref: '#/definitions/models.Event'
+        type: integer
       produces:
       - application/json
       responses:
         "200":
-          description: OK
+          description: Event deleted successfully
           schema:
-            $ref: '#/definitions/models.Event'
+            type: string
       summary: Delete an event
       tags:
       - Events
@@ -63,21 +62,16 @@ paths:
     get:
       consumes:
       - application/json
-      description: Adds a new event to the system
-      parameters:
-      - description: Event Data
-        in: body
-        name: event
-        required: true
-        schema:
-          $ref: '#/definitions/models.Event'
+      description: Retrieves event details from the system
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/models.Event'
+            items:
+              $ref: '#/definitions/models.Event'
+            type: array
       summary: Get event details
       tags:
       - Events
