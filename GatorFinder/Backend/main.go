@@ -3,15 +3,44 @@ package main
 import (
 	_ "backend/docs" // Make sure this path is correct
 	"backend/routes"
+	"database/sql"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
 
 	"github.com/gorilla/mux"
+
 	httpSwagger "github.com/swaggo/http-swagger"
 )
 
 func main() {
+	db, err := sql.Open("sqlite3", "./test.db")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+	sqlQueryToCreateTable :=
+		`
+		   				CREATE TABLE IF NOT EXISTS events (
+						uid INTEGER PRIMARY KEY AUTOINCREMENT,
+						username VARCHAR(64) NULL,
+						eventname VARCHAR(64) NULL,
+						eventdescription VARCHAR(64) NULL,						
+						created DATE NULL
+	);`
+	_, err = db.Exec(sqlQueryToCreateTable)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var version string
+	err = db.QueryRow("SELECT SQLITE_VERSION()").Scan(&version)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(version)
 	StartServer()
 }
 func StartServer() {
