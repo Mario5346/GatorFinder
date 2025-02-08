@@ -34,7 +34,9 @@ func main() {
 						endTime TIME NULL,
 						image VARCHAR(64) NULL
 	);`
+	//_, err = db.Exec("DROP TABLE events")
 	_, err = db.Exec(sqlQueryToCreateTable)
+
 
 	if err != nil {
 		log.Fatal(err)
