@@ -51,7 +51,7 @@ const docTemplate = `{
         },
         "/events/delete": {
             "delete": {
-                "description": "Adds a new event to the system",
+                "description": "Deletes an event from the system by ID",
                 "consumes": [
                     "application/json"
                 ],
@@ -64,20 +64,18 @@ const docTemplate = `{
                 "summary": "Delete an event",
                 "parameters": [
                     {
-                        "description": "Event Data",
-                        "name": "event",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.Event"
-                        }
+                        "type": "integer",
+                        "description": "Event ID",
+                        "name": "id",
+                        "in": "query",
+                        "required": true
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "Event deleted successfully",
                         "schema": {
-                            "$ref": "#/definitions/models.Event"
+                            "type": "string"
                         }
                     }
                 }
@@ -85,7 +83,7 @@ const docTemplate = `{
         },
         "/events/get": {
             "get": {
-                "description": "Adds a new event to the system",
+                "description": "Retrieves event details from the system",
                 "consumes": [
                     "application/json"
                 ],
@@ -96,22 +94,14 @@ const docTemplate = `{
                     "Events"
                 ],
                 "summary": "Get event details",
-                "parameters": [
-                    {
-                        "description": "Event Data",
-                        "name": "event",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.Event"
-                        }
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/models.Event"
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Event"
+                            }
                         }
                     }
                 }
@@ -125,10 +115,16 @@ const docTemplate = `{
                 "date": {
                     "type": "string"
                 },
+                "description": {
+                    "type": "string"
+                },
                 "id": {
                     "type": "string"
                 },
-                "title": {
+                "name": {
+                    "type": "string"
+                },
+                "username": {
                     "type": "string"
                 }
             }
