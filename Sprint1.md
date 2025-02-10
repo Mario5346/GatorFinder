@@ -1,4 +1,4 @@
-- User stories
+User stories
 1. User Authentication (Basic)
     As a student, I want to sign up and log in with my university email so that I can access the platform.
 2. Event Posting (Basic)
@@ -24,11 +24,21 @@
 
 
 What issues your team planned to address
-Which ones were successfully completed
-Which ones didn't and why?
-- What issues your team planned to address
-- Which ones were successfully completed
-- Which ones didn't and why?
+    - Frontend: 
+        - The main page to serve as a welcome page with the logo, placeholder event information, a search bar, login button, and sign up button
+        - Implement the login page along with a sign up page
+        - Implement the about page with more information about our team and a link to our repository 
+        - To establish the login and sing up pages with the backend
 
+Which ones were successfully completed
+    - Frontend: 
+        - Successfully implemented the welcome page of the site that currently includes the logo, a search bar to look up events, and some placeholder event cards that would have relevant event information on it.
+        - The search bar is functional for the events by the title name
+        - The login and sign up pages are working.
+
+Which ones didn't and why?
+    - Frontend
+        - Since we were focused on prioritizing the main page of the website and cover the basic features, the login and sign up page have not been connected to the backend yet.
+        
 - Front End Video Link:
 - Back End Video Link:
