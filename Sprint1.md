@@ -42,7 +42,7 @@ Which ones were successfully completed
   - JSON and routing for POST, GET, DELETE complete.
 
 Which ones didn't and why?
-- Front end
+- Front end:
   - Since we were focused on prioritizing the main page of the website and cover the basic features, the login and sign up page have not been connected to the backend yet.
 - Back end:
   - User table and authentication have not been implemented yet due to time constraints and still learning how to work back end with GO as well as focusing on other aspects first.
