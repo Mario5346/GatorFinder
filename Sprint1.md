@@ -47,5 +47,5 @@ Which ones didn't and why?
 - Back end:
   - User table and authentication have not been implemented yet due to time constraints and still learning how to work back end with GO as well as focusing on other aspects first.
 
-- Front End Video Link:
+- Front End Video Link: https://youtu.be/UGWnXtQU0CY
 - Back End Video Link: https://www.youtube.com/watch?v=Emn7jPdyKSY
